@@ -55,5 +55,6 @@ public class Word {
         String str = String.format("%-3s", slevel)
                 + String.format("%15s", word) + "  " + meaning;
         return str;
+
     }
 }
