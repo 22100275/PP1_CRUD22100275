@@ -7,13 +7,12 @@ import java.util.Scanner;
 public class WordCRUD implements ICRUD{
 
     ArrayList<Word> list;
-    Scanner s;
+    Scanner s = new Scanner(System.in);
     final String fname = "Dictionary.txt";
 
-    WordCRUD(Scanner s) {
+    WordCRUD() {
         list = new ArrayList<>();
-        this.s = s;
-    }
+        }
     @Override
     public Word add() {
         System.out.print("=> 난이도(1,2,3) & 새 단어 입력 : ");

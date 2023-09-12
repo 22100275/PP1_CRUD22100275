@@ -7,7 +7,7 @@ public class WordManager {
     WordCRUD wordCRUD;
 
     WordManager() {
-        wordCRUD = new WordCRUD(s);
+        wordCRUD = new WordCRUD();
     }
     public int selectMenu() {
         System.out.println("***영단어 마스터***");
