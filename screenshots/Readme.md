@@ -1,4 +1,4 @@
-![image](https://github.com/22100275/PP1_CRUD22100275/assets/103886797/88fda365-1f32-4de5-9a7d-c83dc6b2886c)단어 추가 실행화면
+단어 추가 실행화면
 <br>
 <img src="https://github.com/22100275/PP1_CRUD22100275/blob/master/screenshots/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-09-03%20210241.png?raw=true" width="30%"></img>
 <br>
