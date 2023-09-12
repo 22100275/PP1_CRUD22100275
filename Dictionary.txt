@@ -4,3 +4,4 @@
 1|pole|기둥, 장대
 1|formerly|이전에, 예전에
 1| apple|사과
+3| island|섬
