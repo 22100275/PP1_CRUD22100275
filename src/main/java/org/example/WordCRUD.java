@@ -19,7 +19,7 @@ public class WordCRUD implements ICRUD{
         System.out.print("뜻 입력 : ");
         String meaning = s.nextLine();
 
-        return new Word(0, level, word, meaning);
+        return new Word(level, word, meaning);
     }
 
     public void addItem() {
@@ -51,11 +51,11 @@ public class WordCRUD implements ICRUD{
             if(!word.contains(keyword)) continue;
             System.out.print((j+1) + " ");
             System.out.println(list.get(i).toString());
-            idlist.add(i);
-            j++;
+            idlist.add(i); //0번째 단어가 저장되면 0이 저장됨 ex)0, 3, 6, 8
+            j++; //그냥 순서대로 인덱스를 출력하기 위한 변수
         }
         System.out.println("--------------------------------");
-        return idlist;
+        return idlist; //0, 3, 6, 8이 담긴 어레이리스트를 리턴
     }
 
     public void listAll(int level) {
@@ -90,15 +90,15 @@ public class WordCRUD implements ICRUD{
     public void deleteItem() {
         System.out.print("=> 삭제할 단어 검색 : ");
         String keyword = s.next();
-        ArrayList<Integer> idlist = this.listAll(keyword);
+        ArrayList<Integer> idlist = this.listAll(keyword); //메소드를 실행하면서 찾아진 0, 4, 6, 8 이 담긴 어레이리스트를 얻어옴
         System.out.print("=> 삭제할 번호 선택 : ");
-        int id = s.nextInt();
+        int id = s.nextInt(); //3번을 누르면 6번 값을 선택한거나 마찬가지
         s.nextLine();
 
         System.out.print("=> 정말로 삭제하실래요?(Y/n) ");
         String ans = s.next();
         if(ans.equalsIgnoreCase("y")) {
-            list.remove((int)idlist.get(id-1));
+            list.remove((int)idlist.get(id-1)); //어레이의 2번인 6번을 선택, 6번이 삭제된다!
             System.out.println("단어가 삭제되었습니다. ");
         } else {
             System.out.println("취소되었습니다. ");
@@ -118,7 +118,7 @@ public class WordCRUD implements ICRUD{
                 int level = Integer.parseInt(data[0]);
                 String word = data[1];
                 String meaning = data[2];
-                list.add(new Word(0, level, word, meaning));
+                list.add(new Word(level, word, meaning));
                 count++;
             }
             br.close();
