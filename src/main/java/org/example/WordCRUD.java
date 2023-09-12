@@ -16,10 +16,11 @@ public class WordCRUD implements ICRUD{
         System.out.print("=> 난이도(1,2,3) & 새 단어 입력 : ");
         int level = s.nextInt();
         String word = s.nextLine();
+        String trimmed = word.trim();
         System.out.print("뜻 입력 : ");
         String meaning = s.nextLine();
 
-        return new Word(level, word, meaning);
+        return new Word(level, trimmed, meaning);
     }
 
     public void addItem() {
@@ -60,7 +61,6 @@ public class WordCRUD implements ICRUD{
 
     public void listAll(int level) {
         int j = 0;
-        ArrayList<Integer> idlist = new ArrayList<>();
         System.out.println("--------------------------------");
         for(int i = 0; i < list.size(); i++) {
             int ilevel = list.get(i).getLevel();
